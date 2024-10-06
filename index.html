@@ -1,0 +1,60 @@
+<!-- Child mode Home Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realistic 3D Solar System Orrery</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        
+    #labels {
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        width: 100%;
+        height: 100%;
+    }
+    #labels div {
+        position: absolute;
+        color: white;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 2px 5px;
+        border-radius: 3px;
+    }
+    #info-box {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    pointer-events: none; /* Prevent mouse events on the info box */
+    transition: opacity 0.3s;
+    opacity: 0; /* Start hidden */
+    z-index: 10;
+}
+
+#info-box.visible {
+    opacity: 1; /* Show when visible */
+}
+
+    </style>
+</head>
+<body>
+    <div id="labels"></div>
+    <div id="infoPanel" style="position: absolute; top: 20px; left: 20px; width: 300px; background: rgba(255, 255, 255, 0.8); padding: 10px; border-radius: 5px; display: none;">
+        <h2 id="planetName"></h2>
+        <p id="planetDetails"></p>
+    </div>    
+    <div id="info-box" style="display: none;"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
